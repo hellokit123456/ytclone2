@@ -15,7 +15,7 @@ export default function Login() {
 
     try {
       const res = await API.post('/auth/login/', {
-        username: email, // assuming username = email in backend
+        username: email,
         password,
       });
       localStorage.setItem('authToken', res.data.token);
