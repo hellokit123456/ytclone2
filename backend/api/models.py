@@ -6,7 +6,7 @@ class Video(models.Model):
     title = models.CharField(max_length=255)
     description = models.TextField(blank=True)
     video_file = models.FileField(upload_to='videos/')
-    thumbnail = models.ImageField(upload_to='thumbnails/', blank=True, null=True)  # ✅ Made optional
+    thumbnail = models.ImageField(upload_to='thumbnails/', blank=True, null=True)  
     views = models.PositiveIntegerField(default=0)
     created_at = models.DateTimeField(auto_now_add=True)
 
@@ -17,7 +17,7 @@ class Video(models.Model):
 class Like(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     video = models.ForeignKey(Video, on_delete=models.CASCADE)
-    is_like = models.BooleanField()  # True = Like, False = Dislike
+    is_like = models.BooleanField()  
     created_at = models.DateTimeField(auto_now_add=True)
 
     class Meta:
