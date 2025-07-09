@@ -15,7 +15,7 @@ from rest_framework.views import APIView
 from rest_framework.parsers import MultiPartParser, FormParser
 
 
-#  VIDEO VIEWS
+
 
 from rest_framework.parsers import MultiPartParser, FormParser
 
@@ -23,7 +23,7 @@ class VideoListCreateView(generics.ListCreateAPIView):
     queryset = Video.objects.all().order_by('-created_at')
     permission_classes = [permissions.IsAuthenticatedOrReadOnly]
 
-    # Enable file uploads
+   
     parser_classes = [MultiPartParser, FormParser]
 
     def get_serializer_class(self):
@@ -49,8 +49,6 @@ class VideoDetailView(generics.RetrieveAPIView):
         return Response(serializer.data)
 
 
-#  LIKE / DISLIKE VIEWS
-
 @api_view(['POST'])
 @permission_classes([permissions.IsAuthenticated])
 def like_video(request, video_id):
@@ -71,7 +69,7 @@ def dislike_video(request, video_id):
     return Response({'message': 'Video disliked'}, status=200)
 
 
-#  COMMENTS
+
 
 class CommentListCreateView(generics.ListCreateAPIView):
     serializer_class = CommentSerializer
@@ -87,7 +85,7 @@ class CommentListCreateView(generics.ListCreateAPIView):
         serializer.save(user=self.request.user, video=video)
 
 
-#  WATCH LATER
+
 
 class WatchLaterListCreateView(generics.ListCreateAPIView):
     serializer_class = WatchLaterSerializer
@@ -100,7 +98,7 @@ class WatchLaterListCreateView(generics.ListCreateAPIView):
         serializer.save(user=self.request.user)
 
 
-#  PLAYLISTS
+
 
 class PlaylistViewSet(viewsets.ModelViewSet):
     serializer_class = PlaylistSerializer
