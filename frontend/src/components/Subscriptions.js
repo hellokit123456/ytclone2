@@ -1,7 +1,6 @@
-// frontend/src/pages/Subscriptions.js
 import React from 'react';
 import './Subscriptions.css';
-import subscriptionsImg from '../assets/Subscriptions.png'; // <-- ensure this is the correct path
+import subscriptionsImg from '../assets/Subscriptions.png'; 
 
 const Subscriptions = () => {
   return (
