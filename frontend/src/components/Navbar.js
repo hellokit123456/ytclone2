@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { FaSearch, FaMicrophone, FaVideo, FaBell, FaUserCircle } from 'react-icons/fa';
-import './Navbar.css'; // Optional: separate styling or put into App.css
+import './Navbar.css'; 
 
 export default function Navbar() {
   const navigate = useNavigate();
