@@ -1,9 +1,9 @@
-/* 1. Global box sizing */
+
 *, *::before, *::after {
   box-sizing: border-box;
 }
 
-/* 2. Theme variables */
+
 :root {
   --yt-red: #FF0000;
   --yt-black: #000000;
@@ -16,25 +16,22 @@
   --thumbnail-height: 160px;
 }
 
-/* 3. Base styles */
+
 body {
   margin: 0;
   font-family: 'Roboto', sans-serif;
   background: var(--yt-bg-light);
   color: var(--yt-dark-gray);
-  overflow: hidden; /* prevent body scroll */
+  overflow: hidden;
 }
 
-/* 4. Layout */
-/* 4a. Overall container */
+
 .app-container {
   display: flex;
   flex-direction: column;
   height: 100vh;
   overflow: hidden;
 }
-
-/* 4b. Fixed navbar */
 .navbar {
   position: fixed;
   top: 0; left: 0; right: 0;
@@ -46,8 +43,6 @@ body {
   padding: 0 16px;
   z-index: 1000;
 }
-
-/* 4c. Grid: sidebar + main, beneath navbar */
 .content-wrapper {
   display: grid;
   grid-template-columns: var(--sidebar-width) 1fr;
@@ -55,8 +50,6 @@ body {
   height: calc(100vh - var(--navbar-height));
   overflow: hidden;
 }
-
-/* 4d. Sidebar */
 .sidebar {
   background: #fff;
   border-right: 1px solid #e5e5e5;
@@ -64,16 +57,16 @@ body {
   padding-top: 10px;
 }
 
-/* 4e. Main content area */
+
 .main-content {
-  margin-left: var(--sidebar-width); /* manually offset for fixed sidebar */
-  margin-top: var(--navbar-height);  /* manually offset for fixed navbar */
+  margin-left: var(--sidebar-width); 
+  margin-top: var(--navbar-height);  
   padding: 1rem;
   background-color: var(--yt-bg-light);
   overflow-y: auto;
   height: calc(100vh - var(--navbar-height));
 }
-/* 5. Home grid: exactly 3 per row */
+
 .home-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -81,7 +74,7 @@ body {
   width: 100%;
 }
 
-/* 6. Video card styling */
+
 .video-card {
   background: #fff;
   border-radius: 4px;
