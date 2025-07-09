@@ -29,6 +29,8 @@ urlpatterns = [
 
     #  Watch Later
     path('watchlater/', WatchLaterListCreateView.as_view(), name='watch-later'),
+    
+    path('upload/', VideoListCreateView.as_view(), name='video-upload'),
 
     #  Playlists (via ViewSet)
     path('', include(router.urls)),

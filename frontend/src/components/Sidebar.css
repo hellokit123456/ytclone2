@@ -1,12 +1,16 @@
 .sidebar {
-  width: 240px;
-  min-height: 100vh;
+  position: fixed;         /* pin under navbar */
+  top: var(--navbar-height);
+  left: 0;
+  width: var(--sidebar-width);
+  height: calc(100vh - var(--navbar-height));
   background-color: #fff;
   padding-top: 10px;
   border-right: 1px solid #e5e5e5;
+  overflow-y: auto;
+  
   font-family: 'Roboto', sans-serif;
-  position: sticky;
-  top: 56px; /* height of navbar */
+  z-index: 900;
 }
 
 .sidebar-link {
